@@ -4,11 +4,13 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const firstMessage = require('./first-message')
 const roleClaim = require('./role-claim')
+const welcome = require('./welcome')
 const command = require('./command')
 
 client.on('ready', () => {
     console.log('dude bot is online!')
 
+    welcome(client)
     roleClaim(client)
 
     command(client, 'ping', message => {
