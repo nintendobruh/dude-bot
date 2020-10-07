@@ -11,7 +11,8 @@ module.exports = client => {
         other: 'Other Dubs Ping',
         announcement: 'Announcement Ping',
         video: 'Video Ping',
-        halloffame: 'Hall of Fame Ping'
+        halloffame: 'Hall of Fame Ping',
+        edp: 'Bot Ping'
     }
 
     const reactions = []
