@@ -7,8 +7,6 @@ module.exports = client => {
     const getEmoji = emojiName => client.emojis.cache.find(emoji => emoji.name === emojiName)
 
     const emojis = {
-        toystory: 'Toy Story Dubs Ping',
-        other: 'Other Dubs Ping',
         announcement: 'Announcement Ping',
         video: 'Video Ping',
         halloffame: 'Hall of Fame Ping',
