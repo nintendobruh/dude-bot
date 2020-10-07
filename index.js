@@ -2,13 +2,22 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 const config = require('./config.json')
+const mongo = require('./mongo')
 const firstMessage = require('./first-message')
 const roleClaim = require('./role-claim')
 const welcome = require('./welcome')
 const command = require('./command')
 
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log('dude bot is online!')
+
+    await mongo().then((mongoose) => {
+        try {
+            console.log('connected to mongo!')
+        } finally {
+            mongoose.connection.close()
+        }
+    })
 
     welcome(client)
     roleClaim(client)
