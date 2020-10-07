@@ -78,7 +78,7 @@ client.on('ready', () => {
                  message.channel.send(`${tag}, I can't kick this user!`)
              }}} else {
                 message.channel.send(`${tag}, please mention a user you wish to kick!`)
-            }
+             }
         } else {  
             message.channel.send(
                 `${tag}, you do not have permission to use this command!`
@@ -140,7 +140,7 @@ client.on('ready', () => {
         }, {
             name: 'Administrative Commands:',
             value: `
-            cc/clearchannel
+            ban, cc/clearchannel, kick
             `
         })
 
