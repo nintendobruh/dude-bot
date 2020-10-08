@@ -1,0 +1,9 @@
+{
+    "languages": ["english", "icelandic"],
+    "translations": {
+        "THAT_IS": {
+            "english": "That is",
+            "icelandic": "Það er"
+        }
+    }
+}
