@@ -7,13 +7,15 @@ const firstMessage = require('./first-message')
 const roleClaim = require('./role-claim')
 const welcome = require('./welcome')
 const command = require('./command')
+const { prependListener } = require('./schemas/welcome-schema')
+const messageCount = require('./message-counter')
 
 client.on('ready', async () => {
     console.log('dude bot is online!')
 
     await mongo().then((mongoose) => {
         try {
-            console.log('connected to mongo!')
+            
         } finally {
             mongoose.connection.close()
         }
@@ -21,6 +23,7 @@ client.on('ready', async () => {
 
     welcome(client)
     roleClaim(client)
+    messageCount(client)
 
     command(client, 'ping', message => {
         message.channel.send('Pong!')
@@ -135,10 +138,8 @@ client.on('ready', async () => {
         const helpembed = new Discord.MessageEmbed()
         .setColor(3447003)
         .setTitle(`dude bot commands`)
+        .setDescription(`Prefix: ${prefix}`)
         .addFields({
-            name: `Prefix: ${prefix}`,
-            value: '- can be changed.'
-        }, {
             name: 'General Commands:',
             value: `
             ping
