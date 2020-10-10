@@ -47,7 +47,7 @@ module.exports = (client, commandOptions) => {
     let {
         commands,
         expectedArgs = '',
-        permissionError = 'You do not have permission to run this command.',
+        permissionError = 'you do not have permission to use this command!',
         minArgs = 0,
         maxArgs = null,
         permissions = [],

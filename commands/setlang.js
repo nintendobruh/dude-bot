@@ -3,6 +3,7 @@ const { minArgs } = require("./add");
 const mongo = require('../mongo')
 const languageSchema = require('../schemas/language-schema')
 const { languages } = require('../lang.json')
+const { setLanguage } = require('../language')
 
 module.exports = {
     commands: ['setlang', 'setlanguage'],
@@ -18,6 +19,8 @@ module.exports = {
             message.reply('that is an unsupported language!')
             return
         }
+
+        setLanguage(guild, targetLanguage)
 
         await mongo().then(async (mongoose) => {
             try {

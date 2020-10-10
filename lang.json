@@ -2,8 +2,32 @@
     "languages": ["english", "icelandic"],
     "translations": {
         "THAT_IS": {
-            "english": "That is",
-            "icelandic": "Það er"
+            "english": "that is",
+            "icelandic": "það er"
+        },
+        "HAS_A_TOTAL_OF": {
+            "english": "has a total of",
+            "icelandic": "hefur samtals af"
+        },
+        "MEMBERS": {
+            "english": "members",
+            "icelandic": "meðlimir"
+        },
+        "YOU_DO_NOT_HAVE_PERMISSION_TO_USE_COMMAND": {
+            "english": "you do not have permission to use this command",
+            "icelandic": "þú hefur ekki leyfi til að nota þessa skipun"
+        },
+        "HAS_BEEN_BANNED_SUCCESSFULLY": {
+            "english": "has been banned successfully",
+            "icelandic": "hefur verið bannað með góðum árangri"
+        },
+        "I_CANT_BAN_THIS_USER": {
+            "english": "I can't ban this user",
+            "icelandic": "Ég get ekki bannað þennan notanda"
+        },
+        "MENTION_USER_TO_BAN": {
+            "english": "please mention a user to ban",
+            "icelandic": "vinsamlegast getið notanda til að banna"
         }
     }
 }

@@ -2,8 +2,11 @@ const path = require('path')
 const fs = require('fs')
 const Discord = require('discord.js')
 const client = new Discord.Client()
+const language = require('./language')
+client.defaultMaxListeners = 25
 
 const config = require('./config.json')
+const { loadLanguages } = require('./language')
 const mongo = require('./mongo')
 const firstMessage = require('./first-message')
 const roleClaim = require('./role-claim')
@@ -44,6 +47,7 @@ client.on('ready', async () => {
     welcome(client)
     roleClaim(client)
     messageCount(client)
+    loadLanguages(client)
     
 
     command(client, 'servers', message => {
@@ -53,7 +57,7 @@ client.on('ready', async () => {
     })
 
     command(client, ['cc', 'clearchannel'], message => {
-        const { member } = message
+        const { member, guild } = message
         const tag = `<@${member.id}>`
 
         if (message.member.hasPermission('ADMINISTRATOR')) {
@@ -61,12 +65,12 @@ client.on('ready', async () => {
                 message.channel.bulkDelete(results)
             })
         } else {
-            message.channel.send(`${tag}, you don't have permission to use this command!`)
+            message.channel.send(`${tag}, ${language(guild, 'YOU_DO_NOT_HAVE_PERMISSION_TO_USE_COMMAND')}!`)
         }
     })
 
     command(client, 'ban', message => {
-        const { member, mentions } = message
+        const { member, mentions, guild } = message
 
         const tag = `<@${member.id}>`
 
@@ -77,16 +81,16 @@ client.on('ready', async () => {
                 const targetMember = message.guild.members.cache.get(target.id)
                 if (targetMember.bannable) {
                 targetMember.ban()
-                message.channel.send(`${tag}, ${targetMember} has been banned successfully.`)
+                message.channel.send(`${tag}, ${targetMember} ${language(guild, 'HAS_BEEN_BANNED_SUCCESSFULLY')}.`)
              } else {
                  if (!targetMember.bannable) {
-                 message.channel.send(`${tag}, I can't ban this user!`)
+                 message.channel.send(`${tag}, ${language(guild, 'I_CANT_BAN_THIS_USER')}!`)
              }}} else {
-                message.channel.send(`${tag}, please mention a user you wish to ban!`)
+                message.channel.send(`${tag}, ${language(guild, 'MENTION_USER_TO_BAN')}!`)
             }
         } else {  
             message.channel.send(
-                `${tag}, you do not have permission to use this command!`
+                `${tag}, ${language(guild, 'YOU_DO_NOT_HAVE_PERMISSION_TO_USE_COMMAND')}!`
             )
         }
     })
