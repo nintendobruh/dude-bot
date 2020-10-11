@@ -41,7 +41,7 @@ client.on('ready', async () => {
         try {
             
         } finally {
-            mongoose.connection.close()
+     
         }
     })
 
@@ -55,6 +55,18 @@ client.on('ready', async () => {
         client.guilds.cache.forEach(guild => {
             message.channel.send(`**${guild.name}** has a total of **${guild.memberCount} members.**`)
         })
+    })
+
+    command(client, '8ball', (message) => {
+        if (message.content.toLowerCase().startsWith(".8ball ")) {
+            if (message.content.toLowerCase() !== ".8ball") {
+                const responses = ["It is certain.", "It is decidedly so.", "Signs point to yes.", "Cannot predict now."
+                , "Ask again later.", "Concentrate and ask again.", "Don't count on it.", "My sources say no.", "Outlook not so good."
+            ]
+                message.randomize = Math.floor((Math.random() * responses.length) + 0);
+                message.channel.send("**" + responses[message.randomize] + "**");
+            }
+        }
     })
 
     command(client, ['cc', 'clearchannel'], message => {
@@ -188,7 +200,7 @@ client.on('ready', async () => {
         .addFields({
             name: 'General Commands:',
             value: `
-            add, ping
+            8ballm add, ping
             `
         }, {
             name: 'Help Commands:',
@@ -196,9 +208,14 @@ client.on('ready', async () => {
             help, serverinfo, supportedlanguages
             `
         }, {
+            name: 'Economy:',
+            value: `
+            bal/balance
+            `
+        }, {
             name: 'Administrative Commands:',
             value: `
-            ban, cc/clearchannel, kick, setlang/setlanguage
+            ban, cc/clearchannel, givebal/givebalance, kick, setlang/setlanguage
             `
         })
 

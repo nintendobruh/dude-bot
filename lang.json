@@ -1,9 +1,10 @@
 {
-    "languages": ["english", "icelandic"],
+    "languages": ["english", "icelandic", "spanish"],
     "translations": {
         "THAT_IS": {
             "english": "that is",
-            "icelandic": "það er"
+            "icelandic": "það er",
+            "spanish": "eso es"
         },
         "HAS_A_TOTAL_OF": {
             "english": "has a total of",
@@ -28,6 +29,26 @@
         "MENTION_USER_TO_BAN": {
             "english": "please mention a user to ban",
             "icelandic": "vinsamlegast getið notanda til að banna"
+        },
+        "MENTION_USER_TO_ADD_COINS": {
+            "english": "please mention a user to add coins to",
+            "icelandic": "vinsamlegast getið notandans til að bæta peningum í"
+        },
+        "PROVIDE_VALID_COIN_AMOUNT": {
+            "english": "please provide a valid amount of coins",
+            "icelandic": "vinsamlegast leggðu fram gildan peninga talningu"
+        },
+        "YOU_HAVE_GIVEN": {
+            "english": "you have given",
+            "icelandic": "þú hefur gefið"
+        },
+        "THEY_NOW_HAVE": {
+            "english": "They now have",
+            "icelandic": "Þeir hafa"
+        }, 
+        "THIS_USER_HAS": {
+            "english": "this user has",
+            "icelandic": "þessi notandi hefur"
         }
     }
 }
