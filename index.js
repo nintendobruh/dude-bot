@@ -14,6 +14,7 @@ const welcome = require('./welcome')
 const command = require('./command')
 const { prependListener } = require('./schemas/welcome-schema')
 const messageCount = require('./message-counter')
+const antiAd = require('./anti-ad')
 
 client.on('ready', async () => {
     console.log('dude bot is online!')
@@ -48,7 +49,7 @@ client.on('ready', async () => {
     roleClaim(client)
     messageCount(client)
     loadLanguages(client)
-    
+    antiAd(client)
 
     command(client, 'servers', message => {
         client.guilds.cache.forEach(guild => {
@@ -154,26 +155,50 @@ client.on('ready', async () => {
         message.channel.send(embed)
     })
 
+    command(client, 'supportedlanguages', (message) => {
+        const { guild } = message
+
+        const embed = new Discord.MessageEmbed()
+            .setColor(3447003)
+            .setTitle(`dude bot supported languages`)
+            .setDescription(`Use setlang, or setlanguage, to change the language!`)
+            .addFields({
+                name: 'Supported:',
+                value: `
+                English
+                Icelandic
+                `
+            }, {
+                name: 'Work-in-progress:',
+                value: `
+                Danish
+                Spanish`
+            })
+
+        message.channel.send(embed)
+    })
+
     command(client, 'help', message => {
         const prefix = (config.prefix)
         const helpembed = new Discord.MessageEmbed()
         .setColor(3447003)
         .setTitle(`dude bot commands`)
         .setDescription(`Prefix: ${prefix}`)
+        .setFooter(`For further help, join the Discord server: https://discord.gg/BR9e2ZV`)
         .addFields({
             name: 'General Commands:',
             value: `
-            ping
+            add, ping
             `
         }, {
             name: 'Help Commands:',
             value: `
-            help, serverinfo
+            help, serverinfo, supportedlanguages
             `
         }, {
             name: 'Administrative Commands:',
             value: `
-            ban, cc/clearchannel, kick
+            ban, cc/clearchannel, kick, setlang/setlanguage
             `
         })
 
