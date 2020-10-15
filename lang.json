@@ -8,47 +8,73 @@
         },
         "HAS_A_TOTAL_OF": {
             "english": "has a total of",
-            "icelandic": "hefur samtals af"
+            "icelandic": "hefur samtals af",
+            "spanish": "tiene un total de"
         },
         "MEMBERS": {
             "english": "members",
-            "icelandic": "meðlimir"
+            "icelandic": "meðlimir",
+            "spanish": "miembros"
         },
         "YOU_DO_NOT_HAVE_PERMISSION_TO_USE_COMMAND": {
             "english": "you do not have permission to use this command",
-            "icelandic": "þú hefur ekki leyfi til að nota þessa skipun"
+            "icelandic": "þú hefur ekki leyfi til að nota þessa skipun",
+            "spanish": "no tienes permiso para usar este comando"
         },
         "HAS_BEEN_BANNED_SUCCESSFULLY": {
             "english": "has been banned successfully",
-            "icelandic": "hefur verið bannað með góðum árangri"
+            "icelandic": "hefur verið bannað með góðum árangri",
+            "spanish": "ha sido prohibido con éxito"
         },
         "I_CANT_BAN_THIS_USER": {
             "english": "I can't ban this user",
-            "icelandic": "Ég get ekki bannað þennan notanda"
+            "icelandic": "Ég get ekki bannað þennan notanda",
+            "spanish": "No puedo prohibir a esta usuaria"
         },
         "MENTION_USER_TO_BAN": {
             "english": "please mention a user to ban",
-            "icelandic": "vinsamlegast getið notanda til að banna"
+            "icelandic": "vinsamlegast getið notanda til að banna",
+            "spanish": "por favor mencionar a un usuario para prohibir"
         },
         "MENTION_USER_TO_ADD_COINS": {
             "english": "please mention a user to add coins to",
-            "icelandic": "vinsamlegast getið notandans til að bæta peningum í"
+            "icelandic": "vinsamlegast getið notandans til að bæta peningum í",
+            "spanish": "por favor mencionar a un usuario para agregar monedas a"
         },
         "PROVIDE_VALID_COIN_AMOUNT": {
             "english": "please provide a valid amount of coins",
-            "icelandic": "vinsamlegast leggðu fram gildan peninga talningu"
+            "icelandic": "vinsamlegast leggðu fram gildan peninga talningu",
+            "spanish": "proporcione una cantidad válida de monedas"
         },
         "YOU_HAVE_GIVEN": {
             "english": "you have given",
-            "icelandic": "þú hefur gefið"
+            "icelandic": "þú hefur gefið",
+            "spanish": "tú has dado"
         },
         "THEY_NOW_HAVE": {
             "english": "They now have",
-            "icelandic": "Þeir hafa"
+            "icelandic": "Þeir hafa",
+            "spanish": "Ellos ahora tienen"
         }, 
         "THIS_USER_HAS": {
             "english": "this user has",
-            "icelandic": "þessi notandi hefur"
+            "icelandic": "þessi notandi hefur",
+            "spanish": "esta usuaria tiene"
+        }, 
+        "MENTION_USER_TO_GIVE_COINS": {
+            "english": "please mention a user to give coins to",
+            "icelandic": "vinsamlegast getið notanda til að gefa peninga til",
+            "spanish": "por favor mencionar a una usuaria para dar monedas a"
+        },
+        "YOU_DO_NOT_HAVE": {
+        "english": "you do not have",
+        "icelandic": "þú ekki hefur",
+        "spanish": "Usted no tiene"
+        },
+        "YOU_NOW_HAVE": {
+        "english": "You now have",
+        "icelandic": "Þú núna hefur",
+        "spanish": "Ahora tienes"
         }
     }
 }

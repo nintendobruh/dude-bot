@@ -1,4 +1,4 @@
-const { minArgs } = require("./add");
+const { minArgs } = require("./misc/add");
 
 const mongo = require('../mongo')
 const languageSchema = require('../schemas/language-schema')

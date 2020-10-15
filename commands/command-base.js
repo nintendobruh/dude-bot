@@ -1,4 +1,4 @@
-const { callback } = require('./add')
+const { callback } = require('./misc/add')
 const { prefix } = require('../config.json')
 
 const validatePermissions = (permissions) => {

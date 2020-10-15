@@ -177,14 +177,12 @@ client.on('ready', async () => {
             .addFields({
                 name: 'Supported:',
                 value: `
-                English
-                Icelandic
+                English\nIcelandic\nSpanish
                 `
             }, {
                 name: 'Work-in-progress:',
                 value: `
-                Danish
-                Spanish`
+                Danish\nFrench\nItalian\nPortuguese`
             })
 
         message.channel.send(embed)
@@ -200,7 +198,7 @@ client.on('ready', async () => {
         .addFields({
             name: 'General Commands:',
             value: `
-            8ballm add, ping
+            8ball, add, ping
             `
         }, {
             name: 'Help Commands:',
@@ -210,7 +208,7 @@ client.on('ready', async () => {
         }, {
             name: 'Economy:',
             value: `
-            bal/balance
+            bal/balance, pay
             `
         }, {
             name: 'Administrative Commands:',
