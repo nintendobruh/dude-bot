@@ -58,7 +58,7 @@ module.exports = (client) => {
 
                     cache[guild.id] = data = [result.channelId, result.text]
                 } finally {
-                    mongoose.connection.close()
+                
                 }
             })
         }

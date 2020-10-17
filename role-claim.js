@@ -1,4 +1,3 @@
-const { RichPresenceAssets } = require('discord.js')
 const firstMessage = require('./first-message')
 
 module.exports = client => {

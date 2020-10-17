@@ -1,5 +1,8 @@
-const { callback } = require('./misc/add')
-const { prefix } = require('../config.json')
+const mongo = require('../mongo')
+const prefixSchema = require('../schemas/command-prefix-schema')
+const { prefix: globalPrefix } = require('../config.json')
+const commandPrefixSchema = require('../schemas/command-prefix-schema')
+const guildPrefixes = {}
 
 const validatePermissions = (permissions) => {
    const validPermissions = [
@@ -70,6 +73,8 @@ module.exports = (client, commandOptions) => {
     client.on('message', message => {
         const { member, content, guild } = message
 
+        const prefix = guildPrefixes[guild.id] || globalPrefix
+
         for (const alias of commands) {
             if (content.toLowerCase().startsWith(`${prefix}${alias.toLowerCase()}`)) {
 
@@ -110,3 +115,24 @@ module.exports = (client, commandOptions) => {
         }
     })
 }
+
+module.exports.updateCache = (guildId, newPrefix) => {
+    guildPrefixes[guildId] = newPrefix
+  }
+
+module.exports.loadPrefixes = async (client) => {
+    await mongo().then(async (mongoose) => {
+      try {
+        for (const guild of client.guilds.cache) {
+          const guildId = guild[1].id
+  
+          const result = await commandPrefixSchema.findOne({ _id: guildId })
+          guildPrefixes[guildId] = result.prefix
+        }
+  
+        console.log(guildPrefixes)
+      } finally {
+
+      }
+    })
+  }

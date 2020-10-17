@@ -3,7 +3,7 @@ const language = require('../../language')
 module.exports = {
     commands: 'multiply',
     expectedArgs: '<num1> <num2>',
-    permissionError: 'You do not have permission to run this command.',
+    permissionError: 'You do not have permission to use this command.',
     minArgs: 2,
     maxArgs: 2,
     callback: (message, arguments, text) => {

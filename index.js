@@ -19,6 +19,8 @@ const antiAd = require('./anti-ad')
 client.on('ready', async () => {
     console.log('dude bot is online!')
 
+    client.user.setActivity("use .help for help!")
+
     const baseFile = 'command-base.js'
     const commandBase = require(`./commands/${baseFile}`)
 
@@ -41,7 +43,7 @@ client.on('ready', async () => {
         try {
             
         } finally {
-     
+            
         }
     })
 
@@ -198,7 +200,7 @@ client.on('ready', async () => {
         .addFields({
             name: 'General Commands:',
             value: `
-            8ball, add, ping
+            8ball, add, divide, invite, multiply, ping, subtract
             `
         }, {
             name: 'Help Commands:',
@@ -213,7 +215,7 @@ client.on('ready', async () => {
         }, {
             name: 'Administrative Commands:',
             value: `
-            ban, cc/clearchannel, givebal/givebalance, kick, setlang/setlanguage
+            ban, cc/clearchannel, givebal/givebalance, kick, setlang/setlanguage, setprefix
             `
         })
 

@@ -17,7 +17,7 @@ const loadLanguages = async (client) => {
                 guildLanguages[guildId] = result ? result.language : 'english'
             }
         } finally {
-            mongoose.connection.close()
+            
         }
     })
 }

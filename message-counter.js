@@ -18,7 +18,7 @@ module.exports = client => {
                     upsert: true
                 }).exec()
             } finally {
-                mongoose.connection.close()
+            
             }
         })
     })
