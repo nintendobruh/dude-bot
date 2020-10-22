@@ -1,6 +1,6 @@
-const mongo = require('./mongo')
-const languageSchema = require('./schemas/language-schema')
-const lang = require('./lang.json')
+const mongo = require('@utilities/mongo')
+const languageSchema = require('@schemas/language-schema')
+const lang = require('@root/lang.json')
 
 const guildLanguages = {}
 

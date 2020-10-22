@@ -1,9 +1,9 @@
-const { minArgs } = require("./misc/add");
+const { minArgs } = require("@commands/misc/add");
 
-const mongo = require('../mongo')
-const languageSchema = require('../schemas/language-schema')
-const { languages } = require('../lang.json')
-const { setLanguage } = require('../language')
+const mongo = require('@utilities/mongo')
+const languageSchema = require('@schemas/language-schema')
+const { languages } = require('@root/lang.json')
+const { setLanguage } = require('@utilities/language')
 
 module.exports = {
     commands: ['setlang', 'setlanguage'],

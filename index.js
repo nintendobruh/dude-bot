@@ -1,20 +1,22 @@
+require('module-alias/register')
+
 const path = require('path')
 const fs = require('fs')
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const language = require('./language')
+const language = require('@utilities/language')
 client.defaultMaxListeners = 25
 
-const config = require('./config.json')
-const { loadLanguages } = require('./language')
-const mongo = require('./mongo')
-const firstMessage = require('./first-message')
-const roleClaim = require('./role-claim')
-const welcome = require('./welcome')
-const command = require('./command')
-const { prependListener } = require('./schemas/welcome-schema')
-const messageCount = require('./message-counter')
-const antiAd = require('./anti-ad')
+const config = require('@root/config.json')
+const { loadLanguages } = require('@utilities/language')
+const mongo = require('@utilities/mongo')
+const firstMessage = require('@utilities/first-message')
+const roleClaim = require('@features/role-claim')
+const welcome = require('@features/welcome')
+const command = require('@utilities/command')
+const { prependListener } = require('@schemas/welcome-schema')
+const messageCount = require('@features/message-counter')
+const antiAd = require('@features/anti-ad')
 
 client.on('ready', async () => {
     console.log('dude bot is online!')

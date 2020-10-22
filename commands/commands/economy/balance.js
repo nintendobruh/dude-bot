@@ -1,6 +1,6 @@
-const economy = require('../../economy')
+const economy = require('@features/economy')
 
-const language = require('../../language')
+const language = require('@utilities/language')
 
 module.exports = {
     commands: ['balance', 'bal'],
